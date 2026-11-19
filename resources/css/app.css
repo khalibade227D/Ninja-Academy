@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+body {
+  @apply bg-slate-50 text-gray-800 min-h-screen flex flex-col antialiased;
+}
+
+/* header */
+header {
+  @apply bg-white/95 backdrop-blur-md border-b border-gray-200/80 sticky top-0 z-40 transition-shadow;
+
+  nav {
+    @apply flex items-center justify-between gap-4 max-w-7xl px-4 sm:px-6 lg:px-8 py-3.5 mx-auto;
+  }
+}
+
+/* custom container */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 flex-1 w-full;
+}
+
+/* card styling */
+.card {
+  @apply bg-white rounded-xl border border-gray-200/90 p-4 sm:p-5 my-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200 hover:shadow-md hover:border-gray-300;
+}
+
+.highlight {
+  @apply border-l-4 border-l-red-600 bg-linear-to-r from-red-50/40 to-transparent;
+}
+
+
+/* buttons */
+.btn {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-red-600 hover:text-white transition-colors duration-150 shadow-2xs;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors duration-150 shadow-xs hover:shadow;
+}
+
+/* form elements */
+form {
+  @apply max-w-screen-sm;
+}
+
+input, select, textarea {
+  @apply block w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 shadow-2xs transition focus:border-red-500 focus:outline-hidden focus:ring-3 focus:ring-red-500/20;
+}
