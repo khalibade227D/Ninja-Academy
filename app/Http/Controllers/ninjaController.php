@@ -2,20 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use app\Models\Ninja;
-use Illuminate\Http\Request;
+use App\Models\Ninja;
 
-class ninjaController extends Controller
+class NinjaController extends Controller
 {
- 
-    public function index(){
-        $ninjas  = Ninja::orderBy('created_at','desc')->get();
+    public function index()
+    {
+        $ninjas = Ninja::orderBy('created_at')->get();
 
-          return view('ninjas.index', ['ninjas' => $ninjas]);
-
-
+        return view('ninjas.index', ['ninjas' => $ninjas]);
     }
-     public function create(){
 
+    public function create()
+    {
+        return view('ninjas.create');
     }
+     public function show($id)
+    {
+        $ninjas = Ninja::findOrFail($id);
+        return view('ninjas.show', ['ninjas'=> $ninjas]);
+    }
+     public function store()
+    {
+        return view('ninjas.create');
+    }
+     public function destroy()
+    {
+        return view('ninjas.create');
+    }
+
+
 }

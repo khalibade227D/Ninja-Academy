@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->String('skill');
             $table->string('rank');
-            $table->string('bio');   
+            $table->string('bio');
             $table->timestamps();
         });
     }

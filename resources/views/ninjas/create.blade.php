@@ -64,16 +64,15 @@
                         class="w-full accent-red-600 cursor-pointer mt-0 mb-2"
                     />
                     <div class="flex justify-between text-[11px] text-slate-400">
-                        <span>1 (Novice)</span>
-                        <span>50 (Chunin)</span>
-                        <span>100 (Master Shinobi)</span>
+                        <span>1-49 (Genin)</span>
+                        <span>50-69 (Chunin)</span>
+                        <span>70-89 (jonin)</span>
+                        <span>90-100 (Elite-snow)</span>
                     </div>
                 </div>
-
-                <!-- Bio / Notes -->
                 <div>
                     <label for="bio" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Dojo Notes & Background (Optional)
+                    Background (Optional)
                     </label>
                     <textarea 
                         id="bio" 
@@ -83,8 +82,6 @@
                         class="mt-0"
                     ></textarea>
                 </div>
-
-                <!-- Form Actions (Responsive) -->
                 <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-end gap-3">
                     <a href="/ninjas" class="w-full sm:w-auto px-4 py-2.5 text-center text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors">
                         Cancel
@@ -93,7 +90,7 @@
                         type="submit" 
                         class="w-full sm:w-auto btn-primary px-6 py-2.5 text-sm cursor-pointer"
                     >
-                        Enroll Shinobi &rarr;
+                        Save Ninja&rarr;
                     </button>
                 </div>
             </form>

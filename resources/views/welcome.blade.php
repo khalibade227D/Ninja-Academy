@@ -36,7 +36,7 @@
                 Pillars of the Academy
             </h2>
             <p class="text-sm text-slate-500 mt-2 mb-0">
-                Every shinobi undergoes rigorous conditioning across three foundational martial disciplines.
+                Every shinobi undergoes rigorous conditioning across various foundational martial disciplines.
             </p>
         </div>
 
@@ -47,10 +47,11 @@
                     🔥
                 </div>
                 <h3 class="text-lg font-bold text-slate-900 my-0">
-                    Elemental Ninjutsu
+                    Mind(Shin)
                 </h3>
                 <p class="text-sm text-slate-600 mt-2 mb-0 leading-relaxed">
-                    Harness primordial nature chakras — from Ryu's scorching fireballs to devastating lightning strikes.
+                    Calm, disciplined and observant.
+                   The art of staying level under pressure and notice what others miss
                 </p>
             </div>
 
@@ -60,10 +61,10 @@
                     🌑
                 </div>
                 <h3 class="text-lg font-bold text-slate-900 my-0">
-                    Shadow Infiltration
+                   Skill(gi)
                 </h3>
                 <p class="text-sm text-slate-600 mt-2 mb-0 leading-relaxed">
-                    Invisible movement, silent assassinations, and undetectable reconnaissance honed through Ayame's stealth teachings.
+                   A craft you keep sharpening over time plus ability to learn fast, gather information and adapt to various scenarious 
                 </p>
             </div>
 
@@ -73,10 +74,10 @@
                     🌿
                 </div>
                 <h3 class="text-lg font-bold text-slate-900 my-0">
-                    Vitality & Healing
+                   Body(tai)
                 </h3>
                 <p class="text-sm text-slate-600 mt-2 mb-0 leading-relaxed">
-                    Restorative alchemy, acupressure seals, and rapid recovery arts ensuring 90+ HP readiness like Master Mika.
+                  Fitness, rest and stamina beacuse the best plan fails if you can't carry it out 
                 </p>
             </div>
         </div>
