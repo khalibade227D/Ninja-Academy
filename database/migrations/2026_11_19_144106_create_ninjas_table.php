@@ -17,6 +17,7 @@ return new class extends Migration
             $table->String('skill');
             $table->string('rank');
             $table->string('bio');
+            $table->foreighnId('Dojo_id');
             $table->timestamps();
         });
     }

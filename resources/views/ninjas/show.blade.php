@@ -1,5 +1,5 @@
-<x-layout title="Ninja Academy | Shinobi Dossier - {{ $ninja->name }}">
 
+<x-layout>
 
     <div class="max-w-3xl mx-auto">
         <a href="/ninjas" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-red-600 transition-colors mb-6 group">
@@ -13,6 +13,9 @@
                     <span class="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-[11px] font-bold text-white tracking-widest uppercase border border-white/15">
                         Shinobi ID #{{ $ninja->id }}
                     </span>
+                     @php
+                    $isElite = in_array(strtolower($ninja->rank), ['jonin', 'kage', 'sensei', 'ambu']);
+                    @endphp
                     <span class="px-2.5 py-1 rounded-full text-[11px] font-bold text-white tracking-widest uppercase {{ $isElite ? 'bg-red-600' : 'bg-slate-700' }}">
                         {{ ucfirst($ninja->rank) }}
                     </span>
@@ -40,7 +43,7 @@
                         <div class="flex items-center gap-2 mt-1">
                             <span class="w-2.5 h-2.5 rounded-full {{ $isElite ? 'bg-red-500 animate-pulse' : 'bg-emerald-500' }}"></span>
                             <span class="text-xs sm:text-sm font-semibold text-slate-800">
-                                {{ $missionClearance }}
+                            --
                             </span>
                         </div>
                     </div>
@@ -97,3 +100,4 @@
         </div>
     </div>
 </x-layout>
+
