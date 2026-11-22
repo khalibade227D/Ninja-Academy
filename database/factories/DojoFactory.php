@@ -20,9 +20,9 @@ class DojoFactory extends Factory
         return [
             
             'name' =>fake()->randomElement(['Cobra-kai', 'Miyagi-do', 'Eagle-fang','Taichi', 'Wudang']),
-            'Desc' => fake()->realText(25),
+            'describtion' => fake()->realText(25),
             'location' => fake()->city(),
-            
+           
 
         ];
     }

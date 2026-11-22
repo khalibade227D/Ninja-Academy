@@ -1,8 +1,8 @@
 <x-layout title="Ninja Academy | Recruit New Shinobi">
     <div class="max-w-2xl mx-auto">
-        <a href="/ninjas" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-red-600 transition-colors mb-6">
+        <a href="/ninjas" class="inline-flex items-center gap-1.5 text-xs text-slate-500 font-bold hover:text-red-600 transition-colors mb-6">
             <span>&larr;</span>
-            <span>Back to Ninja Roster</span>
+            <span>Back to All Ninjas</span>
         </a>
 
         <!-- Form Card -->
@@ -30,12 +30,10 @@
                         placeholder="e.g. Hanzo, Sakura, Sasuke"
                         class="mt-0"
                     />
-                </div>
-
-                <!-- Primary Skill / Specialty -->
+                </div> 
                 <div>
                     <label for="skill" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Primary Specialty
+                        Skill
                     </label>
                     <select id="skill" name="skill" class="mt-0">
                         <option value="Stealth">Stealth & Infiltration</option>
@@ -49,9 +47,9 @@
                 <div>
                     <div class="flex items-center justify-between mb-1.5">
                         <label for="health" class="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                            Initial Health/Stamina Points (HP: 1 - 100)
+                             Rank value(RV: 1 - 100)
                         </label>
-                        <span id="healthDisplay" class="text-xs font-bold text-red-600">80 HP</span>
+                        <span id="healthDisplay" class="text-xs font-bold text-red-600">80 RV</span>
                     </div>
                     <input 
                         type="range" 
@@ -90,7 +88,7 @@
                         type="submit" 
                         class="w-full sm:w-auto btn-primary px-6 py-2.5 text-sm cursor-pointer"
                     >
-                        Save Ninja&rarr;
+                        Save Ninja &rarr;
                     </button>
                 </div>
             </form>

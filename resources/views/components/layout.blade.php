@@ -7,7 +7,7 @@
 
     @vite('resources/css/app.css')
 </head>
-<body class="min-h-full flex flex-col font-sans bg-slate-50 text-slate-800 selection:bg-red-500 selection:text-white">
+<body class=" min-h-full flex flex-col font-sans bg-slate-50 text-slate-800 selection:bg-red-500 selection:text-white">
     <!-- Header Navigation -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 shadow-xs">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
@@ -41,11 +41,11 @@
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main class="container  scroll-smooth">
         {{ $slot }}
     </main>
-    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800/80 mt-auto">
-        <div class="h-1 bg-linear-to-r from-red-600 via-amber-500 to-red-600"></div>
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800/80 mt-auto">
+        <div class="h-0.5 bg-linear-to-r from-red-600 via-amber-500 to-red-600"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
                 <div class="lg:col-span-2 space-y-4">
@@ -57,7 +57,7 @@
                             </svg>
                         </span>
                         <span class="text-xl font-bold tracking-tight text-white">
-                            Ninja<span class="text-red-500">Academy</span>
+                            Ninja <span class="text-red-500">Academy</span>
                         </span>
                     </div>
 
