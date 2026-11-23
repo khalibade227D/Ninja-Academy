@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('dojos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
-            $table->text('describtion');
             $table->string('location');
-
+            $table->text('description');
+            $table->timestamps();
         });
     }
 

@@ -11,21 +11,25 @@
                     Currently Available Ninjas
                 </h1>
                 <p class="text-sm text-slate-500 mt-1 mb-0">
-                    Go through all registered ninjas,  inspect their combat ranks and view their complete profiles.
+                    Go through all registered ninjas, inspect their combat ranks, assigned dojo, and view their complete profiles.
                 </p>
             </div>
 
             <div class="flex items-center gap-3">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-700">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    {{ $ninjas->count() }} Ninjas
+                    {{ $ninjas->total() }} Ninjas Enrolled
                 </span>
+                <a href="/ninjas/create" class="btn-primary text-xs sm:text-sm">
+                    + Recruit Ninja
+                </a>
             </div>
         </div>
+
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6">
             <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200/80 shadow-2xs">
-                <span class="text-xs font-medium text-slate-400 block">Total Shinobi</span>
-                <span class="text-xl sm:text-2xl font-bold text-slate-800">{{ $ninjas->count() }}</span>
+                <span class="text-xs font-medium text-slate-400 block">Total Ninjas</span>
+                <span class="text-xl sm:text-2xl font-bold text-slate-800">{{ $ninjas->total() }}</span>
             </div>
             <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200/80 shadow-2xs">
                 <span class="text-xs font-medium text-slate-400 block">Elite Tier (Jonin+)</span>
@@ -45,6 +49,7 @@
             </div>
         </div>
     </div>
+
     @if($ninjas->isEmpty())
         <div class="bg-white rounded-2xl border border-slate-200 p-12 text-center my-8">
             <div class="w-16 h-16 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl mx-auto mb-4">
@@ -53,7 +58,7 @@
             <h3 class="text-lg font-bold text-slate-800 my-0">No Ninjas Enrolled Yet</h3>
             <p class="text-sm text-slate-500 mt-1 mb-4">The dojo is currently quiet!</p>
             <a href="/ninjas/create" class="btn-primary">
-                +create a ninja
+                + Create a Ninja
             </a>
         </div>
     @else
@@ -72,6 +77,9 @@
                 @endphp
                 <li>
                     <x-card 
+                        :highlight="$isElite"
+                        :badge="$isElite ? '★ ' . ucfirst($ninja->rank) : ucfirst($ninja->rank)"
+                        :href="route('ninjas.show', $ninja->id)"
                     >
                         <div class="flex items-start sm:items-center gap-3.5">
                             <div class="w-12 h-12 rounded-xl flex items-center justify-center font-black text-lg shrink-0 shadow-sm {{ $avatarColor }}">
@@ -86,35 +94,42 @@
                                     <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-md border border-slate-200 font-mono font-medium">
                                         ✦ {{ $ninja->skill }}
                                     </span>
+                                    @if($ninja->dojo)
+                                        <span class="text-xs bg-red-50 text-red-700 px-2.5 py-0.5 rounded-md border border-red-200/60 font-medium inline-flex items-center gap-1">
+                                            <span>🏯</span>
+                                            <span>{{ $ninja->dojo->name }}</span>
+                                        </span>
+                                    @endif
                                 </div>
+
                                 @if($ninja->bio)
                                     <p class="text-xs text-slate-500 line-clamp-1 mt-1 mb-0">
                                         {{ Str::limit($ninja->bio, 110) }}
                                     </p>
                                 @endif
 
-                                <div class="mt-2 flex items-center gap-3 text-[11px] text-slate-400">
+                                <div class="mt-2 flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] text-slate-400">
                                     <span>ID #{{ $ninja->id }}</span>
                                     <span>&bull;</span>
                                     <span>Rank: <strong class="text-slate-600 font-semibold">{{ ucfirst($ninja->rank) }}</strong></span>
+                                    @if($ninja->dojo)
+                                        <span>&bull;</span>
+                                        <span>Dojo: <strong class="text-slate-600 font-semibold">{{ $ninja->dojo->name }} ({{ $ninja->dojo->location }})</strong></span>
+                                    @endif
                                     @if($ninja->created_at)
                                         <span>&bull;</span>
                                         <span>Joined {{ $ninja->created_at->format('M Y') }}</span>
                                     @endif
                                 </div>
                             </div>
-                              <div class="pt-3 sm:pt-0 border-t border-slate-100 sm:border-0 shrink-0">
-                            <a href="/ninjas/{{$ninja->id}}" class="btn group-hover:bg-red-600 group-hover:text-white w-full sm:w-auto">
-                            <span>View Details</span>
-                            <span class="group-hover:translate-x-1 transition-transform duration-150">&rarr;</span>
-                                  </a>
-                                </div>
                         </div>
-                         
                     </x-card>
                 </li>
             @endforeach
         </ul>
+
+        <div class="mt-8">
+            {{ $ninjas->links() }}
+        </div>
     @endif
-    {{$ninjas->links()}}
 </x-layout>

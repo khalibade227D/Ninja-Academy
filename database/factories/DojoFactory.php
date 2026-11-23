@@ -18,12 +18,9 @@ class DojoFactory extends Factory
     public function definition(): array
     {
         return [
-            
-            'name' =>fake()->randomElement(['Cobra-kai', 'Miyagi-do', 'Eagle-fang','Taichi', 'Wudang']),
-            'describtion' => fake()->realText(25),
+            'name' => fake()->randomElement(['Cobra-kai', 'Miyagi-do', 'Eagle-fang', 'Taichi Sanctum', 'Wudang Mountain', 'Shadow Lotus', 'Crimson Dragon']),
+            'description' => fake()->realText(80),
             'location' => fake()->city(),
-           
-
         ];
     }
 }

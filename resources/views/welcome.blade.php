@@ -1,7 +1,5 @@
 <x-layout title="Ninja Academy | Welcome to the Dojo">
-    <!-- Hero Section -->
     <div class="relative overflow-hidden rounded-3xl bg-linear-to-br from-slate-900 via-slate-800 to-slate-950 text-white p-6 sm:p-12 lg:p-16 mb-12 shadow-xl border border-slate-800">
-        <!-- Background Ambient Glow & Kanji Motif -->
         <div class="absolute -right-12 -bottom-12 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute right-6 top-6 sm:right-12 sm:top-12 opacity-10 text-8xl sm:text-9xl font-black select-none pointer-events-none text-red-500">
             忍

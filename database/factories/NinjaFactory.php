@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Ninja;
 use App\Models\Dojo;
+use App\Models\Ninja;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,12 +20,10 @@ class NinjaFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'skill' => fake()->word(),
-            'bio' => fake()->realText(20),
-            'rank' => fake()->randomElement(['Genin', 'Chunin', 'Jonin', 'Kage', 'Sensei', 'Ambu', 'Elite-Snow']),
-             'dojo-id' => Dojo::inRandomOrder()->first()->id,
-            
+            'skill' => fake()->randomElement(['Stealth', 'Fireball', 'Swordsmanship', 'Chakra Healing', 'Shadow Clone', 'Lightning Blade', 'Water Dragon']),
+            'bio' => fake()->realText(80),
+            'rank' => fake()->randomElement(['Genin', 'Chunin', 'Jonin', 'Kage']),
+            'dojo_id' => Dojo::inRandomOrder()->first()?->id ?? Dojo::factory(),
         ];
     }
 }
- 

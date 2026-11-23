@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('ninjas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->String('skill');
+            $table->string('skill');
             $table->string('rank');
             $table->string('bio');
-            $table->foreignId('dojo_id')->constrained()->onDelete('cascade');
+            $table->foreignId('dojo_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
