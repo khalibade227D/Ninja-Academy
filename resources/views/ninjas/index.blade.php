@@ -2,13 +2,9 @@
     <div class="mb-8">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200">
             <div>
-                <div class="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-red-600 mb-1">
-                    <span>🥷 Ninja Roster</span>
-                    <span>&bull;</span>
-                    <span>All Enrolled Ninjas</span>
-                </div>
+              
                 <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 my-0">
-                    Currently Available Ninjas
+                    Currently Available Ninjas 🥷 
                 </h1>
                 <p class="text-sm text-slate-500 mt-1 mb-0">
                     Go through all registered ninjas, inspect their combat ranks, assigned dojo, and view their complete profiles.
@@ -18,11 +14,8 @@
             <div class="flex items-center gap-3">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-700">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    {{ $ninjas->total() }} Ninjas Enrolled
+                    {{ $ninjas->total() }} Ninjas
                 </span>
-                <a href="/ninjas/create" class="btn-primary text-xs sm:text-sm">
-                    + Recruit Ninja
-                </a>
             </div>
         </div>
 
