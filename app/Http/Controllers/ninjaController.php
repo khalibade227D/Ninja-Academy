@@ -49,4 +49,13 @@ class NinjaController extends Controller
 
         return view('ninjas.show', ['ninja' => $ninja]);
     }
+
+    public function delete(string|int $id): RedirectResponse
+    {
+        $ninja = Ninja::findOrFail($id);
+
+        $ninja->delete();
+
+        return redirect()->route('ninjas.index');
+    }
 }

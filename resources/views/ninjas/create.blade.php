@@ -4,8 +4,6 @@
             <span class="group-hover:-translate-x-1 transition-transform">&larr;</span>
             <span>Back to All Ninjas</span>
         </a>
-
-        <!-- Form Card -->
         <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8">
             <div class="border-b border-slate-100 pb-5 mb-6">
                 <h1 class="text-2xl sm:text-3xl font-black text-slate-900 my-0">

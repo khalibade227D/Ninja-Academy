@@ -32,11 +32,15 @@
 
                 <div class="flex items-center gap-3 shrink-0">
                     <a href="/ninjas" class="border border-white/20 hover:bg-white/10 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
-                        &larr; Roster
+                        edit
                     </a>
-                    <a href="/ninjas/create" class="bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition-colors shadow-xs">
-                        + New Recruit
-                    </a>
+                    <form action="{{ route('ninjas.delete', $ninja->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this ninja?');" class="m-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition-colors shadow-xs cursor-pointer">
+                            Delete
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>

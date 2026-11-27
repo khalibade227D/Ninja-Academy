@@ -18,7 +18,7 @@
         {{ $slot }}
     </div>
 
-    @if($href)
+    @if(true)
         <div class="pt-3 sm:pt-0 border-t border-slate-100 sm:border-0 shrink-0">
             <a href="{{ $href }}" class="btn group-hover:bg-red-600 group-hover:text-white w-full sm:w-auto">
                 <span>View Details</span>

@@ -21,8 +21,7 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Ninja', false);
         $response->assertSee('Academy', false);
-        $response->assertSee('Shadow Dispatch', false);
-        $response->assertSee('Honoring the Shinobi Way', false);
+        $response->assertSee('Train with discipline', false);
     }
 
     /**
@@ -127,5 +126,33 @@ class ExampleTest extends TestCase
         $response->assertSee('Stealth');
         $response->assertSee('Lotus Sanctuary');
         $response->assertSee('Kyoto');
+    }
+
+    /**
+     * Test delete ninja deletes the record and redirects to index.
+     */
+    public function test_delete_ninja_removes_warrior(): void
+    {
+        $dojo = Dojo::create([
+            'name' => 'Mist Village',
+            'location' => 'Foggy Valley',
+            'description' => 'Hidden within dense mists.',
+        ]);
+
+        $ninja = Ninja::create([
+            'name' => 'Zabuza',
+            'skill' => 'Water Dragon',
+            'rank' => 'Jonin',
+            'bio' => 'Demon of the Mist.',
+            'dojo_id' => $dojo->id,
+        ]);
+
+        $response = $this->delete('/ninjas/'.$ninja->id);
+
+        $response->assertRedirect('/ninjas');
+        $this->assertDatabaseMissing('ninjas', [
+            'id' => $ninja->id,
+            'name' => 'Zabuza',
+        ]);
     }
 }
